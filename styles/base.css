@@ -1,0 +1,231 @@
+:root {
+    --primary-color: #e1f2fe; 
+    --secondary-color: #98d2eb; 
+    --background-color: #ecf0f1; 
+    --header-color: #2c3e50; 
+    --text-color: #2c3e50; 
+    --accent-color: black; 
+    --white: #ffffff;
+}
+
+
+body {
+    font-family: "Playwrite AU NSW", cursive;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+   
+}
+
+header {
+    background-color: var(--header-color);
+    font-family: "Caveat", cursive;
+    display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+}
+
+#profile-picture {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+#profile-name{
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar ul {
+    list-style: none;
+    background: #000;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.navbar li {
+    display: inline-block;
+    justify-content: space-around;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: #ffffff;
+    width: 100px;
+    display: block;
+    padding: 10px 15px;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: normal;
+    text-align: center;
+}
+
+.course-work {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+#myButton::before {
+    content: "\2630";
+}
+
+#myButton {
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    width: 44px;
+    text-align: right;
+    padding: rem .1vw;
+    position: absolute;
+    top: 0;
+    right: 2vw;
+}
+
+ul.menulinks li a {
+    display: flex;
+    padding: .75rem 2vw;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+li.current-menu-item a {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+ul.menulinks {
+    display: none;
+    list-style-type: none;
+}
+
+#myButton.open::before {
+    content: "x";
+}
+
+ul.open.menuLinks {
+    display: block;
+}
+
+
+.nav #nav-bar li #home {
+    margin-right: 0;
+   
+}
+
+h1 {
+    color: var(--text-color);
+    font-size: 18px;
+    font-family: "Caveat", cursive;
+    margin: 15;
+    padding: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    text-align: center;
+}
+
+h2 {
+    background-color: black;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    position: relative;
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: 0;
+    padding: 10px;
+    display: flex-inline;
+    align-items: center;
+    justify-content: center;
+
+}
+.card {
+    position: relative;
+    margin-right: 0;
+    display: inline-flexbox;
+    align-items: center;
+    background-color: var(--background-color);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: "Caveat", cursive;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    color: var(--text-color);
+}
+
+section ul {
+    list-style: none;
+    padding: 30px;
+    display: flex-inline;
+    position: relative;
+    top: 10px;
+    bottom: 33px;
+}
+
+.card li {
+    padding: 15px;
+    margin-right: 10px; 
+    text-align: center;
+    font-family: "Caveat", cursive;
+    font-size: 18px;
+  
+}
+
+.card li a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+#card-weather {
+    background-color: var(--background-color);
+    font-family: "Caveat", cursive;
+    color: var(--text-color);
+    letter-spacing: 1px;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+.local {
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    text-align: center;
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: var(--header-color);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
