@@ -70,13 +70,6 @@ header {
     text-align: center;
 }
 
-.course-work {
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 8px;
-  }
-
-
 @media only screen and (min-width: 38rem) {
 
     #myButton {
@@ -128,20 +121,30 @@ main #activities {
 section h2 {
     background-color: black;
     color: white;
-    padding: 5px;
-    border: 2px solid;
-    position: relative;
+    padding: 15px;
+    border: 3px solid;
+    position: center;
+    max-width: 700px;
+    display: center;
 }
 
 section h3 {
     background-color: black;
     color: white;
     padding: 15px;
-    border-radius: 14px;
+    border: 3px solid;
     position: center;
-    width: 100px;
-    display: block;
+    max-width: 700px;
    }
+
+section h4 {
+    background-color: black;
+    color: white;
+    padding: 15px;
+    border: 3px solid;
+    position: center;
+    max-width: 700px;
+}    
 
 footer {
     background-color: var(--header-color);

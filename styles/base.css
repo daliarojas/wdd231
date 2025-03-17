@@ -134,7 +134,7 @@ h1 {
     font-weight: normal;
     letter-spacing: 1px;
     line-height: 1.2;
-    text-align: left;
+    text-align: center;
 }
 
 section h2 {
@@ -144,16 +144,26 @@ section h2 {
     border-radius: 5px;
     position: relative;
     display: center;
-    text-align: center;
+    text-align: left;
 } 
 
-h3 {
+section h3 {
     background-color: black;
     color: white;
-    padding: 5px;
-    border-radius: 14px;
-    position: relative;
-}
+    padding: 15px;
+    border: 3px solid;
+    position: center;
+    max-width: 700px;
+   }
+
+section h4 {
+    background-color: black;
+    color: white;
+    padding: 15px;
+    border: 3px solid;
+    position: center;
+    max-width: 700px;
+}    
 
 
 .card {
