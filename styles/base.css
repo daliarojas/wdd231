@@ -71,8 +71,8 @@ header {
 }
 
 .course-work {
-    border: 1px solid #ddd;
-    padding: 15px;
+    border: 10px solid #ddd;
+    padding: 10px;
     border-radius: 8px;
   }
 
@@ -127,35 +127,39 @@ ul.open.menuLinks {
 
 h1 {
     color: var(--text-color);
-    font-size: 18px;
+    font-size: 15px;
     font-family: "Caveat", cursive;
     margin: 15;
     padding: 10px;
-    font-weight: bold;
+    font-weight: normal;
     letter-spacing: 1px;
     line-height: 1.2;
-    text-align: center;
+    text-align: left;
 }
 
-h2 {
+section h2 {
     background-color: black;
     color: white;
-    padding: 15px;
+    padding: 10px;
     border-radius: 5px;
     position: relative;
-    margin-right: 0;
-    margin-left: 0;
-    margin-top: 0;
-    padding: 10px;
-    display: flex-inline;
-    align-items: center;
-    justify-content: center;
+    display: center;
+    text-align: center;
+} 
 
+h3 {
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 14px;
+    position: relative;
 }
+
+
 .card {
     position: relative;
     margin-right: 0;
-    display: inline-flexbox;
+    display: flex;
     align-items: center;
     background-color: var(--background-color);
     border: 1px solid #ccc;
@@ -163,8 +167,8 @@ h2 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     font-family: "Caveat", cursive;
-    font-size: 12px;
-    font-weight: bold;
+    font-size: 10px;
+    font-weight: normal;
     letter-spacing: 1px;
     line-height: 1.2;
     color: var(--text-color);
@@ -184,28 +188,13 @@ section ul {
     margin-right: 10px; 
     text-align: center;
     font-family: "Caveat", cursive;
-    font-size: 18px;
+    font-size: 16px;
   
 }
 
 .card li a {
     text-decoration: none;
     color: var(--text-color);
-}
-
-#card-weather {
-    background-color: var(--background-color);
-    font-family: "Caveat", cursive;
-    color: var(--text-color);
-    letter-spacing: 1px;
-    display: flex;
-    margin: 0;
-    padding: 0;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-    margin-bottom: 25px;
-    margin-top: 25px;
 }
 
 .local {
