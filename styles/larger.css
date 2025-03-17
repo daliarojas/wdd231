@@ -109,41 +109,44 @@ h1 {
 
 main {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 1rem;
+    grid-template-columns: 3fr 2fr;
+    grid-gap: 20px;
     padding: 1rem; 
 }
 
 main #activities {
-    grid-column: 1 / 3;
+    grid-column: 1 / 4;
 }
 
 section h2 {
     background-color: black;
     color: white;
-    padding: 15px;
-    border: 3px solid;
+    padding: 1px;
+    border: 2px solid;
     position: center;
     max-width: 700px;
-    display: center;
+    text-align: center;
+    border-radius: 8px;
 }
-
 section h3 {
     background-color: black;
     color: white;
-    padding: 15px;
+    padding: 5px;
     border: 3px solid;
     position: center;
     max-width: 700px;
+    text-align: center;
    }
 
 section h4 {
     background-color: black;
     color: white;
-    padding: 15px;
+    padding: 7px;
     border: 3px solid;
     position: center;
     max-width: 700px;
+    text-align: center;
+    display: flex;
 }    
 
 footer {
