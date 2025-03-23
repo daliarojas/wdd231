@@ -23,11 +23,11 @@ header {
     background-color: var(--header-color);
     font-family: "Caveat", cursive;
     display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
 }
 
 #profile-picture {
