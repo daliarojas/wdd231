@@ -10,221 +10,130 @@
 
 
 body {
-    font-family: "Playwrite AU NSW", cursive;
-    line-height: 1.6;
-    background-color: var(--background-color);
-    color: var(--text-color);
+    font-family: 'Open sans', sans-serif;
     margin: 0;
-    padding: 0;
-   
+    line-height: 1.6;
+    background-color: #f0f4f7;
+    color: var(--text-color);
 }
 
 header {
-    background-color: var(--header-color);
-    font-family: "Caveat", cursive;
+    background-color: var(--primary-color);
+    color: var(--accent2-color);
+    padding: 1rem 0;
+    text-align: center;
+}
+
+#course-title {
+    font-family:"Caveat", cursive; ;
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+nav {
     display: flex;
-    align-items: center;
     justify-content: center;
-    padding: 20px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+    gap: 2rem;
+    background-color: var(--accent1-color);
+    padding: 0.5rem 0;
 }
 
-#profile-picture {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    align-items: center;
-    object-fit: cover;
-    margin-right: 20px;
-}
-
-#profile-name{
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.navbar ul {
-    list-style: none;
-    background: #000;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
-.navbar li {
-    display: inline-block;
-    justify-content: space-around;
-}
-
-.navbar a{
+nav a {
+    color: var(--accent2-color);
     text-decoration: none;
-    color: #ffffff;
-    width: 100px;
-    display: block;
-    padding: 10px 15px;
-    font-size: 13px;
-    text-transform: uppercase;
-    font-weight: normal;
-    text-align: center;
-}
-
-.course-work {
-    border: 10px solid #ddd;
-    padding: 10px;
-    border-radius: 8px;
-  }
-
-#myButton::before {
-    content: "\2630";
-}
-
-#myButton {
-    font-size: 1.2rem;
-    background: none;
-    border: none;
-    color: #ffffff;
-    cursor: pointer;
-    width: 44px;
-    text-align: right;
-    padding: rem .1vw;
-    position: absolute;
-    top: 0;
-    right: 2vw;
-}
-
-ul.menulinks li a {
-    display: flex;
-    padding: .75rem 2vw;
-    color: #ffffff;
-    text-decoration: none;
-}
-
-
-li.current-menu-item a {
-    background-color: rgba(0, 0, 0, 0.2);
-}
-
-ul.menulinks {
-    display: none;
-    list-style-type: none;
-}
-
-#myButton.open::before {
-    content: "x";
-}
-
-ul.open.menuLinks {
-    display: block;
-}
-
-
-.nav #nav-bar li #home {
-    margin-right: 0;
-   
-}
-
-h1 {
-    color: var(--text-color);
-    font-size: 15px;
-    font-family: "Caveat", cursive;
-    margin: 15;
-    padding: 10px;
-    font-weight: normal;
-    letter-spacing: 1px;
-    line-height: 1.2;
-    text-align: center;
-}
-
-section h2 {
-    background-color: black;
-    color: white;
-    padding: 10px;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
     border-radius: 5px;
-    position: relative;
-    display: center;
-    text-align: left;
-} 
+    transition: background-color 0.3s ease;
+}
 
-section h3 {
-    background-color: black;
-    color: white;
-    padding: 15px;
-    border: 3px solid;
-    position: center;
-    max-width: 700px;
-   }
+nav a:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
 
-section h4 {
-    background-color: black;
-    color: white;
-    padding: 15px;
-    border: 3px solid;
-    position: center;
-    max-width: 700px;
-}    
-
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
 
 .card {
-    position: relative;
-    margin-right: 0;
+    background-color: var(--accent2-color);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    text-align: center;
+    color: var(--primary-color);
+    font-family: 'Playfair Display', serif;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-me .card-content {
     display: flex;
-    align-items: center;
-    background-color: var(--background-color);
-    border: 1px solid #ccc;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.about-me img {
+    max-width: 150px;
+    height: auto;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    font-family: "Caveat", cursive;
-    font-size: 10px;
-    font-weight: normal;
-    letter-spacing: 1px;
-    line-height: 1.2;
-    color: var(--text-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-section ul {
-    list-style: none;
-    padding: 30px;
-    display: flex-inline;
-    position: relative;
-    top: 10px;
-    bottom: 33px;
+
+
+
+
+
+
+
+
+.web-dev-resources ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-.card li {
-    padding: 15px;
-    margin-right: 10px; 
-    text-align: center;
-    font-family: "Caveat", cursive;
-    font-size: 16px;
-  
+.web-dev-resources li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #ddd;
 }
 
-.card li a {
+.web-dev-resources a {
+    color: var(--secondary-color);
     text-decoration: none;
-    color: var(--text-color);
+    transition: color 0.3s ease;
 }
 
-.local {
-    font-weight: bold;
-    font-size: 18px;
-    letter-spacing: 1px;
-    line-height: 1.2;
-    text-align: center;
-    display: block;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
+.web-dev-resources a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
 }
 
 footer {
-    background-color: var(--header-color);
-    color: white;
-    padding: 20px;
+    background-color: var(--primary-color);
+    color: var(--accent2-color);
     text-align: center;
-    border-radius: 5px;
-    margin-bottom: 25px;
-    margin-top: 25px;
+    padding: 1rem;
+}
+
+footer p {
+    margin: 0.25rem 0;
+}
+
+#lastModified {
+    font-size: 0.8rem;
+    font-style: italic;
+    opacity: 0.8;
 }

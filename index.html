@@ -3,65 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="Home"/>
-    <meta name="description" content="WDD 231 - Web Frontend Development">
-    <meta name="author" content="Dalia Rojas">
+    <title>Dalia Rojas| WDD 231 Frontend Development I </title>
+    <meta name="description" content="A professional portfolio homepage.">
+    <meta name="author" content="Dalia  Rojas">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+NSW:wght@100..400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/larger.css" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="styles/larger.css">
+    <script src="js/main.js" defer></script> 
 </head>
 <body>
     <header>
-        <img id="profile-picture" src="images/profilepic.jpg" alt="Dalia E. Rojas">
-        <span id="profile-name">Dalia E. Rojas</span>
-    </header>
-     <div class="navbar">
-       
-        <nav>
-            <ul>
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#" title="Chamber">Chamber</a></li>
-                <li><a href="#" title="GitHub Profile">GitHub Profile</a></li>
-                <li><a href="#" title="LinkedIn">LinkedIn</a></li>
-            </ul>
-        </nav> 
+        <div class="logo-container">
+            <div class="logo-placeholder"></div>
+            <span class="site-title">Dalia Rojas</span>
+        </div>
         
-      </div>  
-    
-      <h1>Home</h1>
+        <nav>
+            <button id="menu-toggle" aria-label="Toggle Navigation Menu">☰</button>
+            <ul id="main-nav" class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="chamber/index.html">Chamber Project</a></li>
+                <li><a href="final/index.html">Final Project</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Home</h1>
 
     <main>
-        <section class="courseWork-box">
-            <h2> Course Work</h2>
-            <ul>
-            <li>
+    
+            <section class="card about-me">
+                <h2>About Me</h2>
+            <div class="card-content">
+                <p>My name is Dalia. I am originally from Lima, Peru but raised between Orlando, FL and Midvale, UT. I work fulltime as a Customer Service Representative, studying in the afternoons to earn my degree in Software Development.  </p>
+            </div>
+            </section>
 
-            </li>
+            <section class="student-photo">
+                <h2>Student Photo</h2>
+                <div class="card-content">
+                    <img src ="images/profilepic.jpg" alt="profilepic"/>
+                </div>
+            </section>
+        </div>
 
-            </ul>
+        </main>
+        
+        <section class="certificate-courses">
+            <h2>Web Certificate Courses</h2>
+            <div class="course-filters">
+                <button id="filter-all">All</button>
+                <button id="filter-cse">CSE</button>
+                <button id="filter-wdd">WDD</button>
+            </div>
+        </section>
+            
+        <section>
+            <div id="course-cards" class="card-grid">
+                </div>
+
+            <p class="credit-total">The total credits for courses listed above is <span id="credit-total">6</span></p>
         </section>
 
-        <section class="country-box">
-            <h3>Midvale, Utah </h3>
-            <picture>
-                <img src="images/midvalepic.jpg" alt="midvalepic">
-            </picture>
-
-        <section class="certificate-box">
-            <h4>Web and Computer Programing</h4>
-
-        </section>         
-            
-</main>
-
     <footer>
-        <p>&copy; <span id="current-year"></span> Dalia Rojas</p>
-        <p>Last modified: <span id="last-modified"></span></p>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn Profile">
+                <img src="images/linkedin-icon.svg" alt="LinkedIn" class="social-icon">
+            </a>
+            <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub Profile">
+                <img src="images/github-icon.svg" alt="GitHub" class="social-icon">
+            </a>
+            <a href="#" target="_blank" aria-label="Twitter Profile">
+                <img src="images/twitter-icon.svg" alt="Twitter" class="social-icon">
+            </a>
+            <a href="#" target="_blank" aria-label="Other Social Media">
+                <img src="images/other-icon.svg" alt="Other" class="social-icon">
+            </a>
+        </div>
+        
+        <div class="footer-info">
+            <p>&copy; <span id="currentyear">2025</span> | Dalia Rojas | Utah, USA</p>
+        </div>
+        
+        <div class="last-modified">
+            <p>Last Modification: <span id="lastModified">04/18/2025 15:14:48</span></p>
+        </div>
     </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="scripts/getDates.js"></script>
-    <script src="scripts.js"></script>
+
 </body>
 </html>

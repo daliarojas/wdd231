@@ -131,12 +131,7 @@ section {
 	background-color: #eee;
 }
 
-.grid {
-	display: grid;
-	grid-template-columns: auto auto;
-	grid-gap: 5px;
-	align-items: center;
-}
+
 
 .grid section {
 	text-align: center;
@@ -147,7 +142,7 @@ section {
 	box-shadow: 0 0 10px #333;
 }
 
-.grid section > * {
+.grid section {
 	margin: 0.1rem;
 }
 
@@ -167,7 +162,7 @@ section {
 	padding: 0.25rem;
 }
 
-.list section > * {
+.list section  {
 	margin: 0 1rem;
 }
 

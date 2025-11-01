@@ -1,72 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Toggle mobile menu
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navMenu = document.querySelector(".nav-links");
-
-    menuToggle.addEventListener("click", () => {
-        navMenu.classList.toggle("open");
-    });
-
-    // Manage active navigation link highlighting
-    const navLinks = document.querySelectorAll(".nav-links a");
-
-    navLinks.forEach(link => {
-        link.addEventListener("click", function () {
-            // Remove "active" class from all links
-            navLinks.forEach(nav => nav.classList.remove("active"));
-
-            // Add "active" class to the clicked link
-            this.classList.add("active");
-        });
-    });
-
-    //Manage changing between grid and list display views
-    const gridSelector = document.querySelector('#directory-grid');
-    const listSelector = document.querySelector('#directory-list');
-    const directoryData = document.querySelector('#directory-data');
-
-    gridSelector.addEventListener('click', ()=>{
-        if (!gridSelector.classList.contains('active')){    
-            gridSelector.classList.add('active');
-            listSelector.classList.remove('active');
-            directoryData.classList.add('directory-cards')
-            directoryData.classList.remove('directory-list')
-        }
-    });
-
-    listSelector.addEventListener('click', ()=>{
-        if (!listSelector.classList.contains('active')){
-            listSelector.classList.add('active');
-            gridSelector.classList.remove('active');
-            directoryData.classList.add('directory-list')
-            directoryData.classList.remove('directory-cards')
-        }
-    });
-
-    //This function builds the HTML for each business in the members.json file and displays it on the page
-    const displayBusinesses = (members) => {
-    const cards = document.querySelector(".directory-cards"); // select the output container element
-
-    members.forEach((business) => {
-        // Create elements to add to the div.cards element
-        let card = document.createElement("section");
-        //Add your own GitHub Pages URL to the startsWith method
-        card.innerHTML = `
-        <img src="${window.location.href.startsWith('https://isasachi.github.io/') ? "/wdd231" + business.image : business.image}">
-        <p>${business.name}</p>
-        <p>${business.address}</p>
-        <p>${business.phone}</p>
-        <p><a href="${business.website}">Website</a></p>
-        `;
-        if (business.membership_level=='gold'){
-        card.classList.add('gold-member');
-        }
-        cards.appendChild(card);
-    }); 
-    
-    }; 
-
-    const gridbutton = document.querySelector("#grid");
+const gridbutton = document.querySelector("#grid");
 const listbutton = document.querySelector("#list");
 const display = document.querySelector("article");
 
@@ -84,46 +16,90 @@ function showList() {
 	display.classList.add("list");
 	display.classList.remove("grid");
 }
+const hamburgerBtn = document.getElementById("hamburger-btn");
+        const navList = document.getElementById("nav-list");
+
+        hamburgerBtn.addEventListener("click", () => {
+            navList.classList.toggle("open");
+        });
 
 
-    //This function fetches the business JSON data from the members.json file (Use your own members.json file)
-    async function getBusinessData() {
-    try {
-        //Add your own GitHub Pages URL to the startsWith method
-        if (window.location.href.startsWith('https://daliarojas.github.io/')) {
-            const response = await fetch("/wdd231/chamber/data/members.json");
-            if (response.ok) {
-                const data = await response.json();
-                displayBusinesses(data);
-            } else {
-                console.error("There was an error loading the member directory data.");
-                const cards = document.querySelector(".directory-cards");
-                cards.innerHTML = "<section><h1>There was an error loading the data</h1></section>";
-            }
-        } else {
-            const response = await fetch("/chamber/data/members.json");
-            if (response.ok) {
-                const data = await response.json();
-                displayBusinesses(data);
-            } else {
-                console.error("There was an error loading the member directory data.");
-                const cards = document.querySelector(".directory-cards");
-                cards.innerHTML = "<section><h1>There was an error loading the data</h1></section>";
-            }
-        }
-    }
-    catch (error){
-        console.error("There was an error loading the member directory data.", error);
-        const cards = document.querySelector(".directory-cards");
-        cards.innerHTML = "<section><h1>There was an error loading the data</h1><p>Please come back another time.</p></section>";
-    }
-    }
 
-    getBusinessData();
+        const apiKey = 'YOUR_OPENWEATHERMAP_API_KEY'; // Replace with your actual API key
+        const latitude = 40.5613; // Latitude for Sandy, Utah
+        const longitude = -111.8516; // Longitude for Sandy, Utah
 
-    // Set current year in footer
-    document.getElementById("year").textContent = new Date().getFullYear();
+        const weatherInfo = document.getElementById('weather-info');
+        const forecastInfo = document.getElementById('forecast-info');
+        const spotlightsSection = document.getElementById('spotlights');
 
-    // Set last update time
-    document.getElementById("last-update").textContent = new Date().toLocaleString();
-});
+        // Get Current Weather
+        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial`)
+            .then(response => response.json())
+            .then(data => {
+                const temperature = data.main.temp;
+                const description = data.weather[0].description;
+
+                weatherInfo.innerHTML = `<p><strong>Current Temperature:</strong> ${temperature}°F</p>
+                                         <p><strong>Description:</strong> ${description}</p>`;
+            })
+            .catch(error => {
+                console.error('Error fetching current weather:', error);
+                weatherInfo.innerHTML = '<p>Failed to load current weather.</p>';
+            });
+
+        // Get 3-Day Forecast
+        fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial&cnt=3`) // Use cnt=3 for 3 days
+            .then(response => response.json())
+            .then(data => {
+                let forecastHTML = '';
+                data.list.forEach(item => {
+                    const date = new Date(item.dt * 1000).toLocaleDateString();
+                    const temp = item.main.temp;
+                    const description = item.weather[0].description;
+
+                    forecastHTML += `<div>
+                                       <p><strong>Date:</strong> ${date}</p>
+                                       <p><strong>Temp:</strong> ${temp}°F</p>
+                                       <p>${description}</p>
+                                     </div>`;
+                });
+                forecastInfo.innerHTML = forecastHTML;
+            })
+            .catch(error => {
+                console.error('Error fetching weather forecast:', error);
+                forecastInfo.innerHTML = '<p>Failed to load weather forecast.</p>';
+            });
+
+        // Fetch and Display Spotlights
+        fetch('data/members.json') // Path to your members.json file
+            .then(response => response.json())
+            .then(data => {
+                const goldSilverMembers = data.members.filter(member => member.membership === 'Gold' || member.membership === 'Silver');
+                if (goldSilverMembers.length > 0) {
+                    const spotlightMembers = [];
+                    while (spotlightMembers.length < 3 && goldSilverMembers.length > 0) {
+                        const randomIndex = Math.floor(Math.random() * goldSilverMembers.length);
+                        spotlightMembers.push(goldSilverMembers.splice(randomIndex, 1)[0]);
+                    }
+
+                    let spotlightsHTML = '';
+                    spotlightMembers.forEach(member => {
+                        spotlightsHTML += `<div class="spotlight-card">
+                                           <img src="${member.logo}" alt="${member.name} Logo">
+                                           <h3>${member.name}</h3>
+                                           <p>${member.address}</p>
+                                           <p>Phone: ${member.phone}</p>
+                                           <p><a href="${member.website}" target="_blank" rel="noopener noreferrer">${member.website}</a></p>
+                                           <p>Membership Level: ${member.membership}</p>
+                                         </div>`;
+                    });
+                    spotlightsSection.innerHTML += spotlightsHTML;
+                } else {
+                    spotlightsSection.innerHTML += '<p>No Gold or Silver members to display.</p>';
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching members data:', error);
+                spotlightsSection.innerHTML = '<p>Failed to load member spotlights.</p>';
+            });
