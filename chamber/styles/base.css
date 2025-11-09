@@ -111,25 +111,57 @@ main {
     width: 100%;
 }
 
-section {
-	border: 1px solid rgb(0 0 0 / 10%);
-	padding: 0.5rem;
-	background-color: #ddd;
+.card-grid {
+    display: grid;
+    /* Creates 3 columns of equal width (1fr) */
+    grid-template-columns: repeat(3, 1fr); 
+    
+    /* Adds consistent space (gutters) between the rows and columns */
+    gap: 20px; 
+    
+    /* Optional: Center the entire grid on the page */
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 20px;
+}
 
-	a {
-		font-family: Arial, sans-serif;
-		font-size: 0.85rem;
-		color: navy;
-	}
+/* --- Individual Card Styling --- */
+.card {
+    /* Create the subtle shadow and white background seen in the image */
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* The lift effect */
+    transition: transform 0.2s, box-shadow 0.2s;
+    height: 100%; /* Ensures all cards stretch to the same height */
+    text-align: center;
+    padding: 20px;
+}
 
-	h3 {
-		font-size: 1.5rem;
-	}
+.card:hover {
+    /* Optional: Slight lift effect on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+    /* Styling for the logos */
+    max-width: 80%; 
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.card a {
+    /* Style the links */
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9em;
 }
 
 .grid {
 	display: grid;
-	grid-row-gap: 20px;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	grid-gap: 5px;
 	align-items: center;
 
 	section {
@@ -175,6 +207,27 @@ h3 {
 			background-color: #bbb;
 		}
 	}
+}
+
+img {
+	width: auto;
+	height: 75px;
+}
+
+
+/* --- Responsiveness (Switching Columns) --- */
+@media (max-width: 1024px) {
+    .card-grid {
+        /* Switch to 2 columns on tablets */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .card-grid {
+        /* Switch to 1 column on mobile phones */
+        grid-template-columns: 1fr;
+    }
 }
 
 img {
