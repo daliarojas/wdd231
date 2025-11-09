@@ -3,94 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dalia Rojas| WDD 231 Frontend Development I </title>
-    <meta name="description" content="A professional portfolio homepage.">
-    <meta name="author" content="Dalia  Rojas">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Dalia Rojas</title>
+    <meta name="description" content="Course Home Page">
+    <meta name="author" content="Dalia Rojas">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/larger.css">
-    <script src="js/main.js" defer></script> 
+    <script src="scripts/main.js" defer></script>
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <div class="logo-placeholder"></div>
-            <span class="site-title">Dalia Rojas</span>
+   <header>
+        <div class="container">
+            <div class="site-logo">
+                <div class="logo-placeholder"></div>
+                <span>Dalia Rojas</span>
+            </div>
+            <nav>
+                <ul class="navigation">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Chamber </a></li>
+                    <li><a href="#"> Final</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+               <button id="menu-toggle" class="hamburger-menu">
+               <span></span>
+               <span></span>
+               <span></span>
+                </button>
+            </div>
         </div>
-        
-        <nav>
-            <button id="menu-toggle" aria-label="Toggle Navigation Menu">☰</button>
-            <ul id="main-nav" class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="chamber/index.html">Chamber Project</a></li>
-                <li><a href="final/index.html">Final Project</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <h1>Home</h1>
+    <main class="container">
+        <h1 class="page-title">Home</h1>
 
-    <main>
-    
-            <section class="card about-me">
+        <section class="top-content">
+            <div class="card about-me">
                 <h2>About Me</h2>
-            <div class="card-content">
-                <p>My name is Dalia. I am originally from Lima, Peru but raised between Orlando, FL and Midvale, UT. I work fulltime as a Customer Service Representative, studying in the afternoons to earn my degree in Software Development.  </p>
+                <p>My name is Dalia. I am originally from Lima, Peru but raised between Orlando, FL and Midvale, UT. I work fulltime as a Customer Service Representative, studying in the afternoons to earn my degree in Software Development. </p>
             </div>
-            </section>
-
-            <section class="student-photo">
+            <div class="card student-photo">
                 <h2>Student Photo</h2>
-                <div class="card-content">
-                    <img src ="images/profilepic.jpg" alt="profilepic"/>
-                </div>
-            </section>
-        </div>
-
-        </main>
-        
-        <section class="certificate-courses">
-            <h2>Web Certificate Courses</h2>
-            <div class="course-filters">
-                <button id="filter-all">All</button>
-                <button id="filter-cse">CSE</button>
-                <button id="filter-wdd">WDD</button>
+                <img src="images/profilepic.jpg" alt="profilepic">
             </div>
         </section>
-            
-        <section>
-            <div id="course-cards" class="card-grid">
-                </div>
 
-            <p class="credit-total">The total credits for courses listed above is <span id="credit-total">6</span></p>
+        <section class="web-certificate-courses">
+            <h2>Web Certificate Courses</h2>
+            <div class="course-categories">
+                <button class="category-btn active">All</button>
+                <button class="category-btn">CSE</button>
+                <button class="category-btn">WDD</button>
+            </div>
+            <div class="course-list">
+                <div class="course-item">WDD 130</div>
+                <div class="course-item">WDD 131</div>
+                <div class="course-item">WDD 231</div>
+            </div>
+            <p class="total-credits">The total credits for course listed above is 6</p>
         </section>
+    </main>
 
     <footer>
-        <div class="social-links">
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn Profile">
-                <img src="images/linkedin-icon.svg" alt="LinkedIn" class="social-icon">
-            </a>
-            <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub Profile">
-                <img src="images/github-icon.svg" alt="GitHub" class="social-icon">
-            </a>
-            <a href="#" target="_blank" aria-label="Twitter Profile">
-                <img src="images/twitter-icon.svg" alt="Twitter" class="social-icon">
-            </a>
-            <a href="#" target="_blank" aria-label="Other Social Media">
-                <img src="images/other-icon.svg" alt="Other" class="social-icon">
-            </a>
-        </div>
-        
-        <div class="footer-info">
-            <p>&copy; <span id="currentyear">2025</span> | Dalia Rojas | Utah, USA</p>
-        </div>
-        
-        <div class="last-modified">
-            <p>Last Modification: <span id="lastModified">04/18/2025 15:14:48</span></p>
+        <div class="container">
+            <div class="social-icons">
+                <a href="#"><i class="linkedin"></i></a>
+                <a href="#"><i class="instagram"></i></a>
+                <a href="#"><i class="github"></i></a>
+            </div>
+            <p>&copy; 2025 Dalia Rojas - Midvale, Utah</p>
+            <p>Last Modification: 11/08/2025 15:14:48</p>
         </div>
     </footer>
-
 </body>
 </html>

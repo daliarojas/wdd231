@@ -9,6 +9,12 @@
 
 }
 
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 body {
     font-family: "Playwrite AU NSW", cursive;
     margin: 0;
@@ -105,98 +111,75 @@ main {
     width: 100%;
 }
 
-#directory-selector{
-    width: 100%;
-    text-align: center;
-}
-
-#directory-selector button{
-    padding: 1rem;
-    margin: .5rem;
-    border-radius: 5px;
-    background-color: var(--accent-color);
-    color: white;
-    border: 1px black solid;
-}
-
-#directory-selector button.active{
-    background-color: var(--white);
-    color: black;
-}
-
-
 section {
-	border: 1px solid rgba(0, 0, 0, 0.1);
+	border: 1px solid rgb(0 0 0 / 10%);
 	padding: 0.5rem;
-	background-color: #eee;
+	background-color: #ddd;
+
+	a {
+		font-family: Arial, sans-serif;
+		font-size: 0.85rem;
+		color: navy;
+	}
+
+	h3 {
+		font-size: 1.5rem;
+	}
 }
 
+.grid {
+	display: grid;
+	grid-row-gap: 20px;
+	align-items: center;
 
+	section {
+		text-align: center;
+		& > * {
+			margin: 0.1rem;
+		}
+	}
 
-.grid section {
-	text-align: center;
+	img {
+		border: 1px solid #fff;
+		box-shadow: 0 0 1rem #555;
+	}
 }
 
-.grid img {
-	border: 1px solid #fff;
-	box-shadow: 0 0 10px #333;
-}
-
-.grid section {
-	margin: 0.1rem;
-}
-
-.grid h3 {
-	font-family: "Caveat", cursive;
+h3 {
+	font-size: 1.2rem;
 }
 
 .list {
 	display: flex;
 	flex-direction: column;
-}
 
-.list section {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	margin: 0;
-	padding: 0.25rem;
-}
+	section {
+		display: grid;
+		grid-template-columns: 2fr 1fr 1fr;
+		margin: 0;
+		padding: 0.25rem;
 
-.list section  {
-	margin: 0 1rem;
-}
+		& > * {
+			margin: 0 1rem;
+		}
 
-.list section img {
-	display: none;
-}
+		img {
+			display: none;
+		}
 
-.list section h3 {
-	font-size: 1rem;
-	font-family: Roboto, Helvetica, sans-serif;
-}
+		h3 {
+			font-size: 1rem;
+		}
 
-.list section:nth-child(even) {
-	background-color: #bed;
-}
-
-section h3 {
-	font-size: 1.3rem;
-}
-
-section p {
-	font-weight: 400;
-	font-size: smaller;
-}
-
-section a {
-	font-family: "Roboto", Arial, sans-serif;
-	font-size: 0.45rem;
-	letter-spacing: 1.1pt;
+		&:nth-child(even) {
+			background-color: #bbb;
+		}
+	}
 }
 
 img {
+	width: auto;
 	height: 75px;
-	max-width: 100%;
 }
 
 footer {
