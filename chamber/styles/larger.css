@@ -100,6 +100,308 @@ main {
     width: 100%;
 }
 
+/* Hero Image Styling */
+.hero-section {
+  /* Set a fixed height or a minimum height for the section */
+  min-height: 100vh; /* '100vh' makes it full viewport height */
+  width: 100%;
+
+  /* Set the background image and its properties */
+  background-image: url('../images/sandycity.jpeg'); 
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat;
+  
+  /* Add an overlay effect (optional, but good for readability) */
+  background-color: rgba(0, 0, 0, 0.4); /* Darkens the background */
+  background-blend-mode: darken; /* Blends the color with the image */
+
+  /* Center the content using Flexbox */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Hero Content Styling */
+.hero-content {
+  color: #ffffff; /* White text for contrast */
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+}
+
+.hero-content p {
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
+}
+
+/* Call-to-Action Button Styling */
+.cta-button {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #ff6347; /* Example color */
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #e55337;
+}
+
+/* --- Current Events Section Styling --- */
+
+#current-events {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f8f8f8; /* Light background for contrast */
+}
+
+#current-events h2 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 2em;
+    border-bottom: 3px solid #e55337; /* Accent color (example gold) */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* --- Events Grid Layout --- */
+.events-grid {
+    display: grid;
+    /* Create a responsive grid: 
+       1 column on small screens, 2-3 columns on larger screens */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Individual Event Card Styling --- */
+.event-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    text-align: left;
+}
+
+.event-card:hover {
+    transform: translateY(-5px); /* Lift on hover for effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.event-title {
+    color: #2c3e50;
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.event-date, .event-time, .event-location {
+    color: #555;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 0.95em;
+}
+
+.event-description {
+    color: #333;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.event-link {
+    display: inline-block;
+    background-color: #e55337; /* Accent color */
+    color: #2c3e50;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.event-link:hover {
+    background-color: #e55337;
+}
+
+#weather-card {
+    /* Card Container Styling */
+    max-width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #f8f8f8; /* Light background */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #333;
+}
+
+.weather-header {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.weather-location {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #2c3e50; 
+    margin-bottom: 5px;
+}
+
+.current-date {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.weather-main-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#weather-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.temperature {
+    font-size: 3em;
+    font-weight: 300;
+    line-height: 1;
+    color: #333;
+}
+
+.units {
+    font-size: 0.5em;
+    vertical-align: super;
+}
+
+#weather-description {
+    font-size: 1.1em;
+    font-style: italic;
+    color: #007bff; 
+    margin-top: 5px;
+    text-transform: capitalize;
+}
+
+.weather-details {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+    font-size: 0.9em;
+}
+
+.weather-details p {
+    margin: 0;
+}
+
+.weather-details span {
+    font-weight: bold;
+    color: #004d99;
+}
+
+.featured-businesses {
+    padding: 40px 20px;
+    background-color: #f8f8f8; /* Light background for contrast */
+    text-align: center;
+}
+
+.featured-businesses h2 {
+    color: #2c3e50; /* Chamber blue */
+    margin-bottom: 30px;
+    font-size: 2em;
+    border-bottom: 2px solid #e55337; /* Accent color */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.business-list {
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+    gap: 20px; /* Space between cards */
+    justify-content: center; /* Center the cards */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Individual Business Card Styling --- */
+
+.business-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px; /* Base width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.business-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.business-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain; /* Ensures logo isn't cropped */
+    margin-bottom: 15px;
+    border-radius: 50%; /* Optional: for circular logos */
+}
+
+.business-name {
+    color: #333;
+    font-size: 1.4em;
+    margin-bottom: 5px;
+}
+
+.business-category {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.business-link {
+    display: inline-block;
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.business-link:hover {
+    background-color: #003366;
+}
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 650px) {
+    .business-card {
+        width: 100%; /* Full width on small screens */
+    }
+}
+
 .card-grid {
     display: grid;
     /* Creates 3 columns of equal width (1fr) */
@@ -203,23 +505,28 @@ img {
 	height: 75px;
 }
 
-/* --- Responsiveness (Switching Columns) --- */
-@media (max-width: 1024px) {
-    .card-grid {
-        /* Switch to 2 columns on tablets */
-        grid-template-columns: repeat(2, 1fr);
-    }
+#member-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
 }
 
-@media (max-width: 600px) {
-    .card-grid {
-        /* Switch to 1 column on mobile phones */
-        grid-template-columns: 1fr;
-    }
+/* List View (Toggled by JavaScript) */
+#member-container.list {
+    display: block; /* Change display to stack items */
 }
-img {
-	width: auto;
-	height: 75px;
+
+#member-container.list .member-card {
+    display: grid; /* Use grid for internal list layout */
+    grid-template-columns: 1fr 2fr 1fr 1fr; /* Example columns for list items */
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+    padding: 10px;
+}
+
+/* You will need buttons or elements to toggle between the views */
+.view-toggle {
+    margin: 10px 0;
 }
 
 footer {

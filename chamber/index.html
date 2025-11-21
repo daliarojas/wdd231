@@ -8,61 +8,93 @@
     <meta name="author" content="Dalia Rojas"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+NSW:wght@100..400&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
     <link rel="stylesheet" href="styles/base.css"/>
     <link rel="stylesheet" href="styles/larger.css"/>
    <script defer src="scripts/scripts.js"></script>
-</head>
+   
 <body>
     <header>
-        <div class="logo">
-            <h1>UtahValley Chamber of Commerce</h1>
+      <nav>
+      <div class="logo">
+        <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9VLFD2EJTxRt0xEI8j4AHYToSHg50_cOCN1S2Qoa8ZzWj3gbP2myaZNk&s" alt="logo"></a>
+      </div>
+        <div class="logo-title-subtitle">
+          <h1>UtahValley</h1>
         </div>
-        <nav>
-            <button class="hamburger" id="hamburger-btn">☰</button>
-            <ul id="nav-list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="directory.html">Directory</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+    
+      </div>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="#">Join</a></li>
+          <li><a href="#">Discover</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <main>
-        <section class="hero-image">
-            <h2 class="hero-title">Welcome to Sandy, Utah</h2>
-        </section>
+    <section class="hero-section">
+  <div class="hero-content">
+    <h1>Welcome to Utah Valley Chamber of Commerce</h1>
+    <p>Connecting businesses and growing our community</p>
+    <a href="join.html" class="cta-button">Join Now</a>
+  </div>
+</section>
 
-        <section class="call-to-action">
-            <a href="#">Join the Chamber of Commerce</a>
-        </section>
+<section id="current-events">
+    <h2>🎉 Chamber Current Events</h2>
+    
+    <div id="events-container" class="events-grid">
+        <p>Loading events...</p>
+        </div>
+</section>
 
-        <section class="current-events">
-            <h2>Current Events</h2>
-            <p>Check out our upcoming events and meetings.</p>
-            </section>
+<section id="weather-card">
+    <div class="weather-header">
+        <h2 class="weather-location">Partly Cloudy</h2>
+        <p class="current-date"></p>
+    </div>
+    <div class="weather-main-info">
+        <img src="images/clouds-sun.png" src="" alt="Weather Icon" aria-hidden="true">
+        <div class="temperature">
+            <span id="temp-value"></span><span class="units">51°F</span>
+        </div>
+        
+    </div>
+    <div class="weather-details">
+        <p>Humidity: <span id="humidity-value">94%</span></p>
+        <p>Wind Speed: <span id="wind-speed-value">3mph</span></p>
+    </div>
+</section>
 
-        <section class="weather-section">
-            <h2>Weather in Sandy</h2>
-            <div id="weather-info">
-                <p>Loading weather...</p>
-            </div>
-            <h2>3-Day Forecast</h2>
-            <div class="weather-forecast" id="forecast-info">
-                <p>Loading forecast...</p>
-            </div>
-        </section>
-
-        <section class="spotlights-section" id="spotlights">
-            <h2>Featured Businesses</h2>
-            </section>
+<section class="featured-businesses">
+    <h2>✨ Featured Chamber Businesses</h2>
+    <div class="business-list" id="business-list">
+        <div class="business-card">
+            <img src="images/paveutahlogo.jpg" alt="Logo for Example Business" class="business-logo">
+            <h3 class="business-name">Go Pave Utah</h3>
+            <p class="business-category">Construction</p>
+            <a href="#" class="business-link" target="_blank">Visit Website</a>
+        </div>
+        
+    </div>
+</section>
     </main>
+    <script>
+        const container = document.getElementById('events-container'); 
+        fetch('events.json')
+    </script>
 </body>
 
     <footer>
+        <div class="chamber-info">
+        <strong><p>UtahValley Chamber of Commerce</p></strong>
+        <p>10634 S. State Street</p>
+        <p>Sandy, UT 84070</p>
+        <p>admin@utahvalleychamber.com</p>
+        <p>8014932546</p>
+      </div> 
         <div class="project-info">
             <p>WDD231 Class Project</p>
             <p>Dalia Rojas</p>
