@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamber Membership Application</title>
+    <meta name="description" content="Welcome to the UtahValley Chamber of Commerce, your hub for connecting with local businesses, fostering economic growth, and supporting the community! We are a vital resource for businesses, offering networking opportunities, advocacy, and resources to help you thrive."/>
+    <meta name="author" content="Dalia Rojas"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
+    <link rel="stylesheet" href="styles/base.css"/>
+    <link rel="stylesheet" href="styles/larger.css"/>
+    <script defer src="scripts/scripts.js"></script>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+        <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9VLFD2EJTxRt0xEI8j4AHYToSHg50_cOCN1S2Qoa8ZzWj3gbP2myaZNk&s" alt="logo"></a>
+      </div>
+        <div class="logo-title-subtitle">
+          <h1>UtahValley</h1>
+        </div>
+          <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html" class="active">Join</a></li>
+          <li><a href="#">Discover</a></li>
+        </nav>
+    </header>
+
+    <main class="flex-grow container mx-auto p-4 md:p-8">
+        <h2 class="text-4xl font-extrabold text-gray-800 mb-8">Membership Application</h2>
+        
+        <!-- Responsive Layout Grid: Form on left, Cards on right (lg screens) -->
+        <div class="lg:grid lg:grid-cols-3 gap-10">
+
+            <!-- Form Section (Col 1 & 2 on large screens) -->
+            <section class="lg:col-span-2 p-6 bg-white rounded-xl shadow-lg mb-8 lg:mb-0">
+                <form id="joinForm" method="get" action="thankyou.html" class="space-y-6">
+
+                    <!-- Hidden Timestamp Field -->
+                    <input type="hidden" id="timestamp" name="timestamp">
+
+                    <!-- Applicant Name & Title -->
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <label class="block">
+                            <span class="text-gray-700 font-medium">First Name <span class="text-red-500">*</span></span>
+                            <input type="text" id="fname" name="fname" required 
+                                title="Applicant's First Name" autocomplete="given-name" 
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-emerald-500 focus:ring focus:ring-emerald-200 focus:ring-opacity-50 p-2">
+                        </label>
+                        <label class="block">
+                            <span class="text-gray-700 font-medium">Last Name <span class="text-red-500">*</span></span>
+                            <input type="text" id="lname" name="lname" required 
+                                title="Applicant's Last Name" autocomplete="family-name" 
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-emerald-500 focus:ring focus:ring-emerald-200 focus:ring-opacity-50 p-2">
+                        </label>
+                    </div>
+
+                    <label class="block">
+                        <span class="text-gray-700 font-medium">Organizational Title (e.g., CEO, Director)</span>
+                        <!-- Pattern: Min 7 chars, only alpha, hyphens, and spaces -->
+                        <input type="text" id="orgTitle" name="orgTitle" 
+                            title="Organizational Title (Must be 7+ alpha characters, hyphens, or spaces)" 
+                            autocomplete="organization-title"
+                            pattern="^[A-Za-z\s\-]{7,}$"
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-emerald-500 focus:ring focus:ring-emerald-200 focus:ring-opacity-50 p-2">
+                    </label>
+
+                    <!-- Contact Info -->
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <label class="block">
+                            <span class="text-gray-700 font-medium">Email Address <span class="text-red-500">*</span></span>
+                            <input type="email" id="email" name="email" required 
+                                title="Applicant's Email Address" autocomplete="email"
+                                placeholder="name@yourbusiness.com"
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-emerald-500 focus:ring focus:ring-emerald-200 focus:ring-opacity-50 p-2">
+                        </label>
+                        <label class="block">
+                            <span class="text-gray-700 font-medium">Mobile Phone Number <span class="text-red-500">*</span></span>
+                            <input type="tel" id="phone" name="phone" required 
+                                title="Applicant's Mobile Phone Number" autocomplete="tel-national"
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-emerald-500 focus:ring focus:ring-emerald-200 focus:ring-opacity-50 p-2">
+                        </label>
+                    </div>
+
+                    <!-- Business Info -->
+                    <label class="block">
+                        <span class="text-gray-700 font-medium">Business/Organization Name <span class="text-red-500">*</span></span>
+                        <input type="text" id="bizName" name="bizName" required 
+                            title="Business or Organization Name" autocomplete="organization"
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-emerald-500 focus:ring focus:ring-emerald-200 focus:ring-opacity-50 p-2">
+                    </label>
+
+                    <!-- Membership Level & Description -->
+                    <label class="block">
+                        <span class="text-gray-700 font-medium">Select Membership Level <span class="text-red-500">*</span></span>
+                        <select id="membership" name="membership" required title="Membership Level Selection"
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-emerald-500 focus:ring focus:ring-emerald-200 focus:ring-opacity-50 p-2">
+                            <option value="" disabled selected>--- Choose a Level ---</option>
+                            <option value="np">NP Membership (Non-Profit - No Fee)</option>
+                            <option value="bronze">Bronze Membership</option>
+                            <option value="silver">Silver Membership</option>
+                            <option value="gold">Gold Membership</option>
+                        </select>
+                    </label>
+
+                    <label class="block">
+                        <span class="text-gray-700 font-medium">Business/Organization Description</span>
+                        <textarea id="description" name="description" rows="4" title="Business/Organization Description"
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-emerald-500 focus:ring focus:ring-emerald-200 focus:ring-opacity-50 p-2"></textarea>
+                    </label>
+
+                    <!-- Submission Button -->
+                    <div class="pt-4">
+                        <input type="submit" value="Submit Application" class="submit-btn">
+                    </div>
+                </form>
+            </section>
+
+            <!-- Membership Cards Section (Col 3 on large screens) -->
+            <section class="lg:col-span-1">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4 lg:mt-0 mt-8">Explore Membership Benefits</h3>
+                <div class="space-y-4">
+                    
+                    <!-- Card 1: NP -->
+                    <div id="card-np" class="membership-card p-4 bg-white border border-gray-200 rounded-xl shadow hover:shadow-xl transition duration-300 card-delay-1" data-level="np">
+                        <h4 class="text-xl font-bold text-gray-900">NP Membership</h4>
+                        <p class="text-gray-600 mb-3">For non-profit organizations. No Fee.</p>
+                        <button type="button" class="modal-trigger text-sm px-4 py-2 bg-emerald-100 text-emerald-800 rounded-full hover:bg-emerald-200 font-medium" data-level="np">
+                            View Benefits
+                        </button>
+                    </div>
+
+                    <!-- Card 2: Bronze -->
+                    <div id="card-bronze" class="membership-card p-4 bg-white border border-gray-200 rounded-xl shadow hover:shadow-xl transition duration-300 card-delay-2" data-level="bronze">
+                        <h4 class="text-xl font-bold text-gray-900">Bronze Membership</h4>
+                        <p class="text-gray-600 mb-3">Entry-level benefits and networking opportunities.</p>
+                        <button type="button" class="modal-trigger text-sm px-4 py-2 bg-emerald-100 text-emerald-800 rounded-full hover:bg-emerald-200 font-medium" data-level="bronze">
+                            View Benefits
+                        </button>
+                    </div>
+
+                    <!-- Card 3: Silver -->
+                    <div id="card-silver" class="membership-card p-4 bg-white border border-gray-200 rounded-xl shadow hover:shadow-xl transition duration-300 card-delay-3" data-level="silver">
+                        <h4 class="text-xl font-bold text-gray-900">Silver Membership</h4>
+                        <p class="text-gray-600 mb-3">Increased visibility, training, and event discounts.</p>
+                        <button type="button" class="modal-trigger text-sm px-4 py-2 bg-emerald-100 text-emerald-800 rounded-full hover:bg-emerald-200 font-medium" data-level="silver">
+                            View Benefits
+                        </button>
+                    </div>
+
+                    <!-- Card 4: Gold -->
+                    <div id="card-gold" class="membership-card p-4 bg-white border border-gray-200 rounded-xl shadow hover:shadow-xl transition duration-300 card-delay-4" data-level="gold">
+                        <h4 class="text-xl font-bold text-gray-900">Gold Membership</h4>
+                        <p class="text-gray-600 mb-3">Premier level with maximum exposure and exclusive access.</p>
+                        <button type="button" class="modal-trigger text-sm px-4 py-2 bg-emerald-100 text-emerald-800 rounded-full hover:bg-emerald-200 font-medium" data-level="gold">
+                            View Benefits
+                        </button>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+  
+
+    <!-- Universal Modal Structure -->
+    <div id="modal-overlay" class="modal-overlay fixed inset-0 z-50 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4">
+        <div id="modal-content" class="bg-white rounded-xl max-w-lg w-full shadow-2xl transform scale-95 opacity-0 transition-all duration-300 p-6">
+            <div class="flex justify-between items-start mb-4">
+                <h3 id="modal-title" class="text-2xl font-bold text-emerald-800"></h3>
+                <button type="button" id="modal-close" class="text-gray-400 hover:text-gray-600 text-3xl leading-none">&times;</button>
+            </div>
+            <ul id="modal-benefits" class="list-disc list-inside space-y-2 text-gray-700 pl-4">
+                <!-- Benefits populated by JS -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Data structure for membership benefits
+        const MEMBERSHIP_DATA = {
+            "np": {
+                "title": "NP Membership (Non-Profit, No Fee)",
+                "benefits": [
+                    "Basic listing in the Chamber's public directory.",
+                    "Access to monthly member newsletters and updates.",
+                    "Eligibility for non-profit focused training workshops (at member rates)."
+                ]
+            },
+            "bronze": {
+                "title": "Bronze Membership ($150/year)",
+                "benefits": [
+                    "All NP benefits.",
+                    "10% discount on standard Chamber event tickets.",
+                    "Priority over NP members in directory searches.",
+                    "Access to specialized financial training webinars."
+                ]
+            },
+            "silver": {
+                "title": "Silver Membership ($300/year)",
+                "benefits": [
+                    "All Bronze benefits.",
+                    "25% discount on all Chamber event and training fees.",
+                    "One free business profile spotlight on a dedicated Chamber social media channel per year.",
+                    "Invitation to exclusive small business networking lunches."
+                ]
+            },
+            "gold": {
+                "title": "Gold Membership ($600/year)",
+                "benefits": [
+                    "All Silver benefits.",
+                    "50% discount on all Chamber fees.",
+                    "Guaranteed spotlight position on the Chamber website home page (rotating basis).",
+                    "Dedicated liaison access to the Chamber Executive Board.",
+                    "Two free tickets to the Annual Gala Dinner."
+                ]
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Form Setup (Timestamp) ---
+            const timestampField = document.getElementById('timestamp');
+            timestampField.value = new Date().toISOString(); 
+
+            // --- Card Animation (Initial Display Transition) ---
+            const cards = document.querySelectorAll('.membership-card');
+            cards.forEach(card => {
+                // Wait a tiny moment to ensure the browser has rendered the initial state (opacity: 0)
+                setTimeout(() => {
+                    card.classList.add('loaded');
+                }, 50);
+            });
+
+            // --- Modal Logic ---
+            const modalOverlay = document.getElementById('modal-overlay');
+            const modalContent = document.getElementById('modal-content');
+            const modalTitle = document.getElementById('modal-title');
+            const modalBenefits = document.getElementById('modal-benefits');
+            const modalCloseBtn = document.getElementById('modal-close');
+            const modalTriggers = document.querySelectorAll('.modal-trigger');
+
+            // Function to show the modal
+            function openModal(level) {
+                const data = MEMBERSHIP_DATA[level];
+                if (!data) return;
+
+                modalTitle.textContent = data.title;
+                modalBenefits.innerHTML = ''; // Clear previous content
+
+                // Populate benefits list
+                data.benefits.forEach(benefit => {
+                    const li = document.createElement('li');
+                    li.textContent = benefit;
+                    modalBenefits.appendChild(li);
+                });
+
+                // Activate overlay and content transitions
+                modalOverlay.classList.add('active');
+                setTimeout(() => {
+                    modalContent.classList.remove('scale-95', 'opacity-0');
+                    modalContent.classList.add('scale-100', 'opacity-100');
+                }, 10);
+            }
+
+            // Function to close the modal
+            function closeModal() {
+                modalContent.classList.remove('scale-100', 'opacity-100');
+                modalContent.classList.add('scale-95', 'opacity-0');
+                
+                // Wait for the transition to finish before hiding the overlay
+                setTimeout(() => {
+                    modalOverlay.classList.remove('active');
+                }, 300);
+            }
+
+            // Event listeners for triggers
+            modalTriggers.forEach(button => {
+                button.addEventListener('click', function() {
+                    const level = this.getAttribute('data-level');
+                    openModal(level);
+                });
+            });
+
+            // Event listeners for closing
+            modalCloseBtn.addEventListener('click', closeModal);
+            modalOverlay.addEventListener('click', function(event) {
+                // Close if clicking directly on the overlay, not the content
+                if (event.target === modalOverlay) {
+                    closeModal();
+                }
+            });
+            
+            // Handle keyboard accessibility (Escape key closes modal)
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && modalOverlay.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+</body>
+
+<footer>
+        <div class="chamber-info">
+        <strong><p>UtahValley Chamber of Commerce</p></strong>
+        <p>10634 S. State Street</p>
+        <p>Sandy, UT 84070</p>
+        <p>admin@utahvalleychamber.com</p>
+        <p>8014932546</p>
+      </div> 
+        <div class="project-info">
+            <p>WDD231 Class Project</p>
+            <p>Dalia Rojas</p>
+            <p>&copy; <span id="year"></span> UtahValley Chamber of Commerce</p>
+            <p>Last Modification: <span id="last-update"></span></p>
+          </div>
+    </footer>
+</html>

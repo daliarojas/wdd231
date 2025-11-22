@@ -391,7 +391,7 @@ main {
 }
 
 .business-link:hover {
-    background-color: #003366;
+    background-color: #e55337;
 }
 
 /* --- Responsive Adjustments --- */
@@ -517,8 +517,8 @@ img {
 }
 
 #member-container.list .member-card {
-    display: grid; /* Use grid for internal list layout */
-    grid-template-columns: 1fr 2fr 1fr 1fr; /* Example columns for list items */
+    display: grid; 
+    grid-template-columns: 1fr 2fr 1fr 1fr; 
     border: 1px solid #ccc;
     margin-bottom: 5px;
     padding: 10px;
@@ -582,3 +582,192 @@ footer p {
         display: none;
     }
 }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Form and Card Layout (Responsive) --- */
+.content-wrapper {
+    display: flex;
+    flex-direction: column; /* Default stack on small screens */
+    gap: 40px;
+}
+.form-section {
+    flex: 2; /* Takes more space on large screens */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+}
+.cards-section {
+    flex: 1; 
+}
+
+
+@media (min-width: 992px) {
+    .content-wrapper {
+        flex-direction: row; 
+    }
+}
+
+label {
+    display: block;
+    margin-bottom: 15px;
+}
+label input, label select, label textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input:required:valid, select:required:valid {
+    border-color: #2c3e50;
+}
+input:focus, select:focus, textarea:focus {
+    border-color: #e55337;
+    outline: 2px solid #b2dfdb; /* Focus ring for keyboard progression */
+}
+.submit-btn {
+    padding: 10px 20px;
+    background-color: #e55337;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.submit-btn:hover {
+    background-color: #e55337;
+}
+
+
+/* --- Card and Animation Styling --- */
+.card-grid {
+    display: grid;
+    gap: 20px;
+}
+@media (min-width: 576px) and (max-width: 991px) {
+    .card-grid {
+        grid-template-columns: 1fr 1fr; /* Two columns on medium screens */
+    }
+}
+.membership-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    
+    /* Animation base state */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Apply staggered animation delay using CSS classes */
+.card-1 { transition-delay: 0.1s; }
+.card-2 { transition-delay: 0.3s; }
+.card-3 { transition-delay: 0.5s; }
+.card-4 { transition-delay: 0.7s; }
+
+/* JavaScript will add this class on DOM load to trigger the transition */
+.membership-card.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.modal-trigger {
+    background-color: #e55337;
+    color: white;
+    border: 1px solid #e55337;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+.modal-trigger:hover {
+    background-color: #e55337;
+    color: white;
+}
+
+/* --- Modal Styles --- */
+.modal-container {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modal-container.active {
+    display: block;
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    animation: fadeIn 0.5s;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+
+.membership-card {
+            /* Initial state for transition */
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out, box-shadow 0.3s;
+        }
+        .membership-card.loaded {
+            /* Final state after DOM loads, triggered by JS */
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Staggered delays for the initial page load animation */
+        .card-delay-1 { transition-delay: 0.1s; }
+        .card-delay-2 { transition-delay: 0.3s; }
+        .card-delay-3 { transition-delay: 0.5s; }
+        .card-delay-4 { transition-delay: 0.7s; }
+
+        .membership-card:hover {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Custom Modal Overlay */
+        .modal-overlay {
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.3s;
+        }
+        .modal-overlay.active {
+            visibility: visible;
+            opacity: 1;
+        }
