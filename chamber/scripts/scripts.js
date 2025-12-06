@@ -1,8 +1,10 @@
-const hamburgerBtn = document.getElementById("hamburger-btn");
-        const navList = document.getElementById("nav-list");
+const hamMenu = document.querySelector('ham-menu');
 
-        hamburgerBtn.addEventListener("click", () => {
-            navList.classList.toggle("open");
+        const offScreenMenu = document.querySelector('.off-screen-menu');
+
+        hamMenu.addEventListener("click", () => {
+            hamMenu.classList.toggle('active');
+            offScreenMenu.classList.toggle('active');
         });
 
 ocument.addEventListener('DOMContentLoaded', () => {

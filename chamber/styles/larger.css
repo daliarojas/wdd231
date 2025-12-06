@@ -1,3 +1,14 @@
+:root {
+    --primary-color: #e1f2fe; 
+    --secondary-color: #98d2eb; 
+    --background-color: #ecf0f1; 
+    --header-color: #2c3e50; 
+    --text-color: #2c3e50; 
+    --accent-color: black; 
+    --white: #ffffff;
+
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -45,18 +56,68 @@ header {
     margin-top: 5px;
 }
 
-.menu-toggle {
-    font-size: 1.5rem;
-    color: white;
-    background: transparent;
-    border: none;
-    outline: none;
-    padding: 0;
-    cursor: pointer;
+.off-screen-menu {
+    background-color: rgb(34, 37 ,49);
+    height: 100vh;
+    width: 100%;
+    max-width: 450px;
+    position: fixed;
+    top: 0;
+    right: -450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 3rem;
+    transition: .3s ease;
 }
 
 nav {
+    padding: 1rem;
+    display: flex;
+    background-color: black;
+}
+
+.ham-menu {
+    height: 50px;
+    width: 50px;
+    margin-left: auto;
+    position: relative;
+}
+
+.ham-menu span {
+    height: 5px;
     width: 100%;
+    background-color: white;
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+}
+
+.ham-menu span:nth-child(1) {
+    top: 25%;
+}
+
+.ham-menu span:nth-child(3) {
+    top: 75%;
+}
+
+.ham-menu.active span:nth-child(1) {
+    top:50%;
+    transform: translate( -50%, -50%) rotate(45deg);
+}
+
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.ham-menu.active span:nth-child(3) {
+    top:50%;
+    transform: translate(-50%, 50%) rotate(-45deg);
 }
 
 .nav-links {
@@ -77,7 +138,7 @@ nav {
 
 .nav-links li {
     padding: 10px;
-    border: 1px solid white;
+    border: 1px solid black;
 }
 
 .nav-links a {
@@ -770,4 +831,84 @@ input:focus, select:focus, textarea:focus {
         .modal-overlay.active {
             visibility: visible;
             opacity: 1;
+        }
+
+       .grid-container {
+            display: grid;
+            /* This creates columns that automatically fit: approx 4 per row on desktop */
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            padding: 24px 40px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        /* 4. Individual Card Styling */
+        .card {
+            background: white;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden; /* Keeps image inside rounded corners */
+            text-align: center;
+        }
+
+        .card:hover {
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        }
+
+        /* Card Title Area */
+        .card-header {
+            padding: 16px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #222;
+        }
+
+        /* Card Image */
+        .card-img {
+            width: 80%;
+            height: 150px;
+            object-fit: contain; /* Ensures image covers area without stretching */
+            display: block;
+        }
+
+        /* Card Text Body */
+        .card-body {
+            padding: 16px;
+            flex-grow: 1; /* Pushes the footer down if text is short */
+        }
+
+        .card-text {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* Card Action Buttons (Like/Share) */
+        .card-footer {
+            padding: 8px 8px 16px 8px;
+        }
+
+        .btn {
+            background: none;
+            border: none;
+            color: #333; /* Dark gray text */
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #f0f0f0;
         }
