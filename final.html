@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Park Hiking Index | Home</title>
+    <meta name="description" content="Discover and filter hiking trails in U.S. National Parks.">
+    <meta name="author" content="Your Name">
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/final.css">
+    <script type="module" src="js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>National Park Trail Finder</h1>
+        <button id="menu-toggle" aria-expanded="false" aria-controls="main-nav-list">☰</button>
+        <nav>
+            <ul id="main-nav-list">
+                <li><a href="index.html" class="active">Home (Trails)</a></li>
+                <li><a href="parks.html">Parks List</a></li>
+                <li><a href="volunteer.html">Volunteer (Form)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Featured Trails</h2>
+        
+        <section id="trail-filters">
+            <label for="difficulty-filter">Filter by Difficulty:</label>
+            <select id="difficulty-filter">
+                <option value="all">All</option>
+                <option value="Moderate">Moderate</option>
+                <option value="Strenuous">Strenuous</option>
+            </select>
+        </section>
+
+        <section id="trail-gallery" class="gallery-grid">
+            </section>
+
+        <figure>
+            <img 
+                data-src="images/park-wide-view.webp" 
+                alt="A wide view of a national park landscape" 
+                loading="lazy"
+                class="lazyload"
+                width="800" 
+                height="450">
+            <figcaption>Always check conditions before hiking.</figcaption>
+        </figure>
+    </main>
+
+    <footer>
+        <p><a href="[YOUR VIDEO LINK]" target="_blank">Video Demonstration</a></p>
+        <p>&copy; <span id="current-year"></span> Your Name | <a href="attributions.html">Attributions</a></p>
+    </footer>
+
+    <dialog id="trail-modal" aria-labelledby="modal-title">
+        <h3 id="modal-title">Trail Details and Alerts</h3>
+        <div id="modal-content">
+            </div>
+        <button id="close-modal-btn">Close</button>
+    </dialog>
+</body>
+</html>

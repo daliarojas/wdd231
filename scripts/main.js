@@ -1,33 +1,59 @@
-document.addEventListener("DOMContentLoaded", function() {
-  
-    const currentYear = new Date().getFullYear();
-    document.getElementById("current-year").textContent = currentYear;
-
-   
-    const lastModified = document.lastModified;
-    document.getElementById("last-modified").textContent = lastModified;
-});
-
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle ('active');
-    navMenu.classList.toggle('active');
-});
-
-document.querySelectorAll(".nav-link").forEach(n => n. addEventListener ("click", () => {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
-}))
-
-        function toggleMenu() {
-            const mobileNav = document.querySelector('.mobile-nav');
-            mobileNav.classList.toggle('active');
-        }
-    
+document.querySelector("footer p:last-child").textContent = 
+    `Last Modification: ${document.lastModified}`;
 
 const courses = [
+    { name: "WDD 130", type: "WDD", credits: 2 },
+    { name: "WDD 131", type: "WDD", credits: 2 },
+    { name: "WDD 231", type: "WDD", credits: 2 },
+    { name: "CSE 110", type: "CSE", credits: 3 },
+    { name: "CSE 111", type: "CSE", credits: 3 }
+];
+
+const courseContainer = document.getElementById("course-container");
+const totalCreditsDisplay = document.getElementById("total-credits");
+const buttons = document.querySelectorAll(".filter-buttons button");
+
+function displayCourses(filter = "All") {
+    // Clear current display
+    courseContainer.innerHTML = "";
+    let totalCredits = 0;
+
+
+    // Filter logic
+    const filteredCourses = filter === "All" 
+        ? courses 
+        : courses.filter(course => course.type === filter);
+
+    // Generate HTML and sum credits
+    filteredCourses.forEach(course => {
+        const card = document.createElement("div");
+        card.className = "course-card";
+        card.textContent = course.name;
+        courseContainer.appendChild(card);
+        
+        totalCredits += course.credits;
+    });
+
+    // Update the credit footer
+    totalCreditsDisplay.textContent = totalCredits;
+}
+
+// Add event listeners to buttons
+buttons.forEach(button => {
+    button.addEventListener("click", (e) => {
+        const category = e.target.textContent;
+        displayCourses(category);
+        
+        // Optional: Style the active button
+        buttons.forEach(btn => btn.style.background = "#bbb");
+        e.target.style.background = "#999";
+    });
+});
+
+// Initial call to show all courses on page load
+displayCourses();
+
+const course = [
     {
         subject: 'CSE',
         number: 110,
@@ -107,4 +133,19 @@ const courses = [
     }
 ]
 
-       
+const menuButton = document.getElementById('menu-toggle');
+const navMenu = document.getElementById('main-nav');
+
+menuButton.addEventListener('click', () => {
+    // Toggle a class that hides/shows the menu
+    navMenu.classList.toggle('open');
+    
+    // Change the button text between 'X' and '☰' (hamburger)
+    if (menuButton.textContent === 'X') {
+        menuButton.textContent = '☰';
+        navMenu.style.display = 'none';
+    } else {
+        menuButton.textContent = 'X';
+        navMenu.style.display = 'block';
+    }
+});
