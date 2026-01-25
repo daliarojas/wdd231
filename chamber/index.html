@@ -12,7 +12,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
     <link rel="stylesheet" href="styles/base.css"/>
     <link rel="stylesheet" href="styles/larger.css"/>
-   <script defer src="scripts/scripts.js"></script>
+    <script defer src="scripts/main.js"></script>
+    <script defer src="scripts/dates.js"></script>
+    <script defer src="scripts/weather.js"></script>
+    <script defer src="scripts/spolights.js"></script>
+</head>
    
 <body>
     <header>
@@ -30,75 +34,105 @@
           <a href="discover.html">Discover</a>
         </ul>
       </nav>
-      </header>
+    </header>
     
-
-    <section class="hero-section">
-  <div class="hero-content">
-    <h1>Welcome to Utah Valley Chamber of Commerce</h1>
+  <main>
+  <section class="hero">
+    <img src="images/sandycity.jpeg" alt="sandycity">
+    
+    <div class="hero-text">
+    <h2>Welcome to Utah Valley Chamber of Commerce</h2>
     <p>Connecting businesses and growing our community</p>
-    <a href="join.html" class="cta-button">Join Now</a>
+    <a href="join.html" class="hero-button">Join Now</a>
+    </div>
+  </section>
+
+  <h1>Home</h1>
+   
+  <section class="home-grid">
+
+  <div class="box events">
+    <h3>Events</h3>
+    <ul>
+      <li>Chamber Luncheon – Feb 12</li>
+      <li>Business Expo – Mar 5</li>
+      <li>Ribbon Cutting – Mar 20</li>
+    </ul>
   </div>
-</section>
 
-<section id="current-events">
-    <h2>🎉 Chamber Current Events</h2>
+  <div class="box current-weather">
+    <h3>Current Weather</h3>
+    <div id="weather-icon-container"></div>
+    <p class="temp"><span id="current-temp"></span>°F</p>
+    <p id="weather-desc"></p>
+    <p>Humidity: <span id="humidity"></span>%</p>
+  </div>
+
+  <div class="box forecast">
+    <h3>Weather Forecast</h3>
+    <p>Today: <strong><span id="day1"></span>°F</strong></p>
+    <p>Tomorrow: <strong><span id="day2"></span>°F</strong></p>
+    <p>Next Day: <strong><span id="day3"></span>°F</strong></p>
+  </div>
+
+</section>
+  
+  <section class="spotlights">
+    <article class="spotlight">
+      <h3>fastsigns of Murray</h3>
+      <img src="https://chambermaster.blob.core.windows.net/images/customers/1263/members/5473/logos/MEMBER_LOGOSEARCH/FS_Logo.jpg" alt="fastsigns" width="200" height="60"/>
+      <hr>
+      <p>Email: info@gmail.com<br>
+         Phone: (801)261-3000<br>
+         URL: http://fastsigns.com</p>
+    </article>
+
+    <article class="spotlight">
+      <h3>Brighton Bank</h3>
+      <img src="data:image/jpeg;base64,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" alt="bank" width="80" height="80"/>
+      <hr>
+      <p>Email: info@gmail.com<br>
+         Phone: (801)432-1756<br>
+         URL: https://www.brightonbank.com</p>
+    </article>
+
+    <article class="spotlight">
+      <h3>RCG Law Group</h3>
+      <img src="https://chambermaster.blob.core.windows.net/images/customers/1263/members/5616/logos/MEMBER_LOGOSEARCH/RCG_law_group_zoomed_in.jpg" alt="rcglaw" width="90" height="50"/>
+      <hr>
+      <p>Email: info@gmail.com<br>
+         Phone: (801)893-2887<br>
+         URL: http://www.rcglawgroup.com</p>
+    </article>
+  </section>
+ 
+  </main>
     
-    <div id="events-container" class="events-grid">
-        <p>Loading events...</p>
-        </div>
-</section>
+<footer>
+    <div class="footer-grid">
+    <div class="footer-left">
+      <p><strong>UtahValley Chamber of Commerce</strong></p>
+      <p>10634 S. State Street</p>
+      <p>Sandy, UT 84070</p>
+      <p>admin@utahvalleychamber.com</p>
+      <p>8014932546</p>
+    </div>
 
-<section id="weather-card">
-    <div class="weather-header">
-        <h2 class="weather-location">Partly Cloudy</h2>
-        <p class="current-date"></p>
+     <div class="footer-center">
+      <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+      <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+      <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
     </div>
-    <div class="weather-main-info">
-        <img src="images/clouds-sun.png" src="" alt="Weather Icon" aria-hidden="true">
-        <div class="temperature">
-            <span id="temp-value"></span><span class="units">51°F</span>
-        </div>
-        
-    </div>
-    <div class="weather-details">
-        <p>Humidity: <span id="humidity-value">94%</span></p>
-        <p>Wind Speed: <span id="wind-speed-value">3mph</span></p>
-    </div>
-</section>
 
-<section class="featured-businesses">
-    <h2>✨ Featured Chamber Businesses</h2>
-    <div class="business-list" id="business-list">
-        <div class="business-card">
-            <img src="images/paveutahlogo.jpg" alt="Logo for Example Business" class="business-logo">
-            <h3 class="business-name">Go Pave Utah</h3>
-            <p class="business-category">Construction</p>
-            <a href="#" class="business-link" target="_blank">Visit Website</a>
-        </div>
-        
+    <div class="footer-right">
+      <p><strong>WDD231 Class</strong></p>
+    <p>
+    &copy; <span id="currentYear"></span>  
+    Dalia Rojas • Utah, USA
+    </p>
+  <p id="lastModified"></p>
     </div>
-</section>
-    </main>
-    <script>
-        const container = document.getElementById('events-container'); 
-        fetch('events.json')
-    </script>
+  </div>
+</footer>
 </body>
-
-    <footer>
-        <div class="chamber-info">
-        <strong><p>UtahValley Chamber of Commerce</p></strong>
-        <p>10634 S. State Street</p>
-        <p>Sandy, UT 84070</p>
-        <p>admin@utahvalleychamber.com</p>
-        <p>8014932546</p>
-      </div> 
-        <div class="project-info">
-            <p>WDD231 Class Project</p>
-            <p>Dalia Rojas</p>
-            <p>&copy; <span id="year"></span> UtahValley Chamber of Commerce</p>
-            <p>Last Modification: <span id="last-update"></span></p>
-          </div>
-    </footer>
-
+</html>

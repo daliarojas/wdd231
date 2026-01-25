@@ -1,45 +1,51 @@
-{
-  "location": {
-    "city": "Springfield",
-    "region": "IL",
-    "country": "US",
-    "lat": 39.7817,
-    "lon": -89.6501,
-    "current_time_epoch": 1732130400
-  },
-  "current_conditions": {
-    "temp_c": 18,
-    "temp_f": 64.4,
-    "feels_like_c": 17,
-    "weather_text": "Partly Cloudy",
-    "icon_code": "04d",
-    "humidity_percent": 68,
-    "wind_kph": 15.5,
-    "wind_direction": "NNW",
-    "pressure_hpa": 1012,
-    "uv_index": 3
+const apiKey = "00a7f5cb45e996f25ab3aa75373231b5";
+const lat = 40.5708;   
+const lon = -111.8431;
+
+const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`;
+
+async function loadWeather() {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error("Weather fetch failed");
+
+    const data = await response.json();
+
+    // CURRENT WEATHER
+    document.getElementById("current-temp").textContent =
+      Math.round(data.list[0].main.temp);
+
+    document.getElementById("weather-desc").textContent =
+      data.list[0].weather[0].description;
+
+    document.getElementById("humidity").textContent =
+      data.list[0].main.humidity;
+
+    const iconCode = data.list[0].weather[0].icon;
+const desc = data.list[0].weather[0].description;
+
+const container = document.querySelector('#weather-icon-container');
+
+const img = document.createElement('img');
+img.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+img.alt = desc;
+img.width = 60;
+
+container.appendChild(img);
+
+    // 3-DAY FORECAST
+    document.getElementById("day1").textContent =
+      Math.round(data.list[0].main.temp);
+
+    document.getElementById("day2").textContent =
+      Math.round(data.list[8].main.temp);
+
+    document.getElementById("day3").textContent =
+      Math.round(data.list[16].main.temp);
+
+  } catch (error) {
+    console.error(error);
   }
-  
-  "forecast":  [
-    {
-      "day_name": "Friday",
-      "date": "2025-11-21",
-      "high_c": 21,
-      "low_c": 10,
-      "high_f": 69.8,
-      "low_f": 50,
-      "weather_text": "Sunny",
-      "icon_code": "01d"
-    },
-    {
-      "day_name": "Saturday",
-      "date": "2025-11-22",
-      "high_c": 15,
-      "low_c": 5,
-      "high_f": 59,
-      "low_f": 41,
-      "weather_text": "Scattered Showers",
-      "icon_code": "09d"
-    }
-  ]
 }
+
+loadWeather();
