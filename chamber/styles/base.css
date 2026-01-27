@@ -76,12 +76,11 @@ nav a.active {
   animation: cardIntro 0.8s ease-out forwards;
 }
 
-/* LIST VIEW */
+
 #members.list {
   display: block;
 }
 
-/* CARDS */
 .card {
   background-color: #fff;
   padding: 1.25rem;
@@ -234,7 +233,7 @@ section h3 {
 }
 
 footer {
-  background-color: #2f4254;
+  background-color: #0D1F2D;
   color: #ffffff;
   padding: 0.75rem 1.25rem; /* compact height */
   font-size: 0.85rem;

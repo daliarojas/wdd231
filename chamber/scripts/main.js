@@ -51,3 +51,23 @@ document.querySelector("#modified").textContent = document.lastModified;
 getMembers();
 
 document.getElementById("timestamp").value = new Date().toISOString();
+
+const params = new URLSearchParams(window.location.search);
+
+  const requiredFields = [
+    ["First Name", "fname"],
+    ["Last Name", "lname"],
+    ["Email", "email"],
+    ["Mobile Phone", "phone"],
+    ["Business Name", "orgname"],
+    ["Submitted On", "timestamp"]
+  ];
+
+  const results = document.getElementById("results");
+
+  requiredFields.forEach(([label, key]) => {
+    const value = params.get(key) || "Not provided";
+    const p = document.createElement("p");
+    p.innerHTML = `<strong>${label}:</strong> ${value}`;
+    results.appendChild(p);
+  });
