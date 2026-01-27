@@ -49,3 +49,5 @@ document.querySelector("#year").textContent = new Date().getFullYear();
 document.querySelector("#modified").textContent = document.lastModified;
 
 getMembers();
+
+document.getElementById("timestamp").value = new Date().toISOString();
