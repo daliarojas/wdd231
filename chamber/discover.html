@@ -3,152 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discover Our Area</title>
+    <title>Discover | Chamber of Commerce</title>
     <meta name="description" content="Discover items of interest in the Chamber area.">
     <link rel="stylesheet" href="styles/base.css"/>
     <link rel="stylesheet" href="styles/larger.css"/>
-    <script defer src="scripts/places.mjs"></script>
-    <script defer src="scripts/discover.js"></script>
+    <script defer src="scripts/discover.mjs"></script>
+    <script type="module" src="scripts/discover.js" defer></script>
+    <script defer src="scripts/main.js"></script>
+    <script defer src="scripts/dates.js"></script>
 
 </head>
 <body>
    <header>
-        <div class="logo">
-        <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9VLFD2EJTxRt0xEI8j4AHYToSHg50_cOCN1S2Qoa8ZzWj3gbP2myaZNk&s" alt="logo"></a>
-      </div>
-        <div class="logo-title-subtitle">
-          <h1>UtahValley</h1>
-        </div>
-    </header>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="directory.html">Directory</a></li>
-          <li><a href="join.html">Join</a></li>
-          <li><a href="discover.html" class="active">Discover</a></li>
+  <div class="header-content">
+    <img src="images/logo.jpeg" alt="Site Logo" class="logo" width="50" height="50">
+    <span class="site-name">UtahValley</span>
+    <button id="menuButton" aria-label="Toggle Menu">☰</button>
+  </div>
+    
+      <nav id="navMenu">
+        <ul>
+          <a href="index.html" >Home</a>
+          <a href="directory.html">Directory</a>
+          <a href="join.html">Join</a>
+          <a href="discover.html" class="active">Discover</a>
         </ul>
       </nav>
-    </nav>
-       <main>
+    </header>
+    <main>
         <h1>Discover Interesting Places</h1>
         
-        <div id="gallery" class="gallery-grid">
-            </div>
-        <main class="grid-container">
+      <section id="visit-message"></section>
 
-        <article class="card">
-            <div class="card-header">
-                <h3 class="card-title">Utah's Hogle Zoo</h3>
-            </div>
-            <img src="images/zoo.webp" alt="Zoo" class="card-img">
-            <div class="card-body">
-                <p class="card-text">Utah's Hogle Zoo is located at 2600 E Sunnyside Ave, Salt Lake City, UT 84108, a member of AZA, known for connecting people with wildlife through exhibits like African Savanna, Rocky Shores, and Asian Highlands, aiming to inspire conservation with its mission to create wildlife champions, offering family fun and educational experiences.</p>
-            </div>
-            <div class="card-footer">
-                <button class="btn">Like</button>
-                <button class="btn">Share</button>
-            </div>
-        </article>
+      <section class="discover-grid" id="discover-cards"></section>
 
-        <article class="card">
-            <div class="card-header">
-                <h3 class="card-title">Natural History Museum of Utah</h3>
-            </div> 
-            <img src="images/museum.webp" alt="museum" class="card-img">
-            <div class="card-body">
-                <p class="card-text">Natural History Museum of Utah (NHMU)
-                 Address: 301 Wakara Way, Salt Lake City, UT 84108 (Rio Tinto Center).
-                 Explores Utah's natural world with vast collections, featuring dinosaur exhibits, Native American cultures (Native Voices), ecosystems, and life sciences in an award-winning building on the University of Utah campus. </p>
-            </div>
-            <div class="card-footer">
-                <button class="btn">Like</button>
-                <button class="btn">Share</button>
-            </div>
-        </article>
-
-        <article class="card">
-            <div class="card-header">
-                <h3 class="card-title">Clark Planetarium</h3>
-            </div>
-            <img src="images/planetarium.webp" alt="planetarium" class="card-img">
-            <div class="card-body">
-                <p class="card-text">The Clark Planetarium is a downtown Salt Lake City science museum at 110 S 400 W, Salt Lake City, UT 84101, offering free, hands-on space/science exhibits and paid shows in its dome and IMAX theaters, aiming to inspire curiosity about the universe through interactive learning for all ages.</p>
-            </div>
-            <div class="card-footer">
-                <button class="btn">Like</button>
-                <button class="btn">Share</button>
-            </div>
-        </article>
-
-        <article class="card">
-            <div class="card-header">
-                <h3 class="card-title">Timpanogos Cave</h3>
-            </div>
-            <img src="images/timpanogoscave.webp" alt="timpanogoscave" class="card-img">
-            <div class="card-body">
-                <p class="card-text">Timpanogos Cave is part of the Timpanogos Cave National Monument, located at 2038 W. Alpine Loop Road, American Fork, UT 84003, within the Wasatch Mountains, known for its stunning, colorful formations like helictites, accessed via a strenuous but paved 1.5-mile hike from the visitor center for guided tours from spring to fall.</p>
-            </div>
-            <div class="card-footer">
-                <button class="btn">Like</button>
-                <button class="btn">Share</button>
-            </div>
-        </article>
-
-         <article class="card">
-            <div class="card-header">
-                <h3 class="card-title">Park City Resorts</h3>
-            </div>
-            <img src="images/parkcity.webp" alt="parkcity" class="card-img">
-            <div class="card-body">
-                <p class="card-text">Park City, Utah boasts major ski resorts like Park City Mountain Resort (7300 acres, diverse terrain, base at 1345 Lowell Ave) and Deer Valley Resort (luxury focus, near Empire/Lady Morgan lifts), plus others like Montage Deer Valley (luxury) and Woodward Park City (action sports). These resorts offer year-round activities, from world-class skiing/snowboarding (groomed runs, bowls, parks) to summer mountain biking and hiking, all accessible from SLC Airport, making it a premier destination.</p>
-            </div>
-            <div class="card-footer">
-                <button class="btn">Like</button>
-                <button class="btn">Share</button>
-            </div>
-        </article>
-
-        <article class="card">
-            <div class="card-header">
-                <h3 class="card-title">Utah State Capitol</h3>
-            </div>
-            <img src="images/utahstatecapitol.webp" alt="utahstatecapitol" class="card-img">
-            <div class="card-body">
-                <p class="card-text">The Utah State Capitol, located at 350 North State Street, Salt Lake City, UT 84114, is a grand neoclassical building with a prominent dome, housing the state's legislature, governor, and courts, featuring Utah granite, a grand rotunda with murals, and beautiful grounds with monuments, serving as a historic landmark and seat of government since its 1916 opening.</p>
-            <div class="card-footer">
-                <button class="btn">Like</button>
-                <button class="btn">Share</button>
-            </div>
-        </article>
-
-        <article class="card">
-            <div class="card-header">
-                <h3 class="card-title">City Creek Center</h3>
-            </div>
-            <img src="images/citycreekcenter.webp" alt="citycreekcenter" class="card-img">
-            <div class="card-body">
-                <p class="card-text">City Creek Center a major downtown Salt Lake City shopping mall at 50 S Main St, SLC, UT 84101, known for its retractable roof, flowing creek with fish, and mix of retail (Nordstrom, Macy's, Tiffany, etc.) and dining, creating a unique, open-air (or enclosed) urban shopping experience.</p>
-            </div>
-            <div class="card-footer">
-                <button class="btn">Like</button>
-                <button class="btn">Share</button>
-            </div>
-        </article>
-
-        <article class="card">
-            <div class="card-header">
-                <h3 class="card-title">Antelope Island</h3>
-            </div>
-            <img src="images/antelopeisland.webp" alt="antelopeisland" class="card-img">
-            <div class="card-body">
-                <p class="card-text">Antelope Island State Park, located near Syracuse, Utah, is the largest island in the Great Salt Lake, famous for its free-roaming bison, pronghorn, deer, and bighorn sheep, offering activities like hiking, biking, camping, historic ranch visits (Fielding Garr Ranch), birding, and incredible sunsets, accessible via a causeway from the mainland and featuring facilities for visitors. With address 4528 W. 1700 S., Syracuse, UT 84075.</p>
-            </div>
-            <div class="card-footer">
-                <button class="btn">Like</button>
-                <button class="btn">Share</button>
-            </div>
-        </article>
-        </main>
+        
+    </main>
     
 <footer>
     <div class="footer-grid">
@@ -176,6 +66,5 @@
     </div>
   </div>
 </footer>
-
 </body>
 </html>
