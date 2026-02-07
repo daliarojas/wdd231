@@ -29,7 +29,6 @@ header {
   color: white;
 }
 
-/* NAV MOBILE */
 nav ul {
   display: none;
   background-color: #92B9BD;
@@ -286,7 +285,6 @@ footer strong {
     padding: 0 20px;
 }
 
-/* Form Styling */
 .apply-form {
     background: white;
     padding: 2rem;
