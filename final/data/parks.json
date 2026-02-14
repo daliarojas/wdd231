@@ -1,0 +1,17 @@
+[
+{ "id":1, "name":"Zion National Park", "state":"Utah", "description":"Famous for red cliffs and hiking.", "activities":["Hiking","Climbing","Photography"] },
+{ "id":2, "name":"Yosemite National Park", "state":"California", "description":"Granite cliffs and waterfalls.", "activities":["Camping","Hiking","Wildlife Viewing"] },
+{ "id":3, "name":"Yellowstone National Park", "state":"Wyoming", "description":"Home of Old Faithful geyser.", "activities":["Geothermal Tours","Wildlife Viewing","Camping"] },
+{ "id":4, "name":"Grand Canyon National Park", "state":"Arizona", "description":"Massive canyon carved by the Colorado River.", "activities":["Hiking","Rafting","Photography"] },
+{ "id":5, "name":"Rocky Mountain National Park", "state":"Colorado", "description":"Mountain peaks and alpine lakes.", "activities":["Hiking","Wildlife Viewing","Scenic Drives"] },
+{ "id":6, "name":"Acadia National Park", "state":"Maine", "description":"Rocky coastline and forest trails.", "activities":["Hiking","Cycling","Camping"] },
+{ "id":7, "name":"Olympic National Park", "state":"Washington", "description":"Rainforests, mountains, coastline.", "activities":["Hiking","Backpacking","Photography"] },
+{ "id":8, "name":"Glacier National Park", "state":"Montana", "description":"Glaciers and scenic drives.", "activities":["Hiking","Boating","Camping"] },
+{ "id":9, "name":"Arches National Park", "state":"Utah", "description":"Natural sandstone arches.", "activities":["Hiking","Photography","Rock Climbing"] },
+{ "id":10, "name":"Bryce Canyon National Park", "state":"Utah", "description":"Unique hoodoo rock formations.", "activities":["Hiking","Stargazing","Camping"] },
+{ "id":11, "name":"Everglades National Park", "state":"Florida", "description":"Wetlands and wildlife.", "activities":["Airboat Tours","Wildlife Viewing","Kayaking"] },
+{ "id":12, "name":"Joshua Tree National Park", "state":"California", "description":"Desert landscape and rock formations.", "activities":["Climbing","Camping","Photography"] },
+{ "id":13, "name":"Sequoia National Park", "state":"California", "description":"Home of giant sequoia trees.", "activities":["Hiking","Camping","Scenic Drives"] },
+{ "id":14, "name":"Denali National Park", "state":"Alaska", "description":"Highest peak in North America.", "activities":["Wildlife Viewing","Mountaineering","Camping"] },
+{ "id":15, "name":"Shenandoah National Park", "state":"Virginia", "description":"Blue Ridge Mountains scenery.", "activities":["Hiking","Scenic Drives","Camping"] }
+]

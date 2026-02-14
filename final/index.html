@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>National Parks Explorer | Discover U.S. Parks</title>
+<meta name="description" content="Discover and explore U.S. National Parks. Learn about activities, locations, and save your favorites.">
+<meta name="author" content="Dalia Rojas">
+<link rel="icon" href="images/favicon.ico">
+<link rel="stylesheet" href="styles/styles.css">
+<link rel="stylesheet" href="styles/large.css">
+<script type="module" src="scripts/navigation.js"></script>
+<script defer src="scripts/fmain.js"></script>
+<script defer src="scripts/dates.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+
+<body>
+<header>
+  <div class="header-content">
+  <span class="site-name">National Parks Explorer</span>
+  <button id="menuButton" aria-label="Toggle Menu">☰</button>
+  </div>
+  
+  <nav id="navMenu">
+      <ul>
+      <a href="index.html" class="active">Home</a>
+      <a href="parks.html">Parks</a>
+      <a href="contact.html">Contact</a>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<section class="hero">
+    <img src="images/heropark.jpg" alt="heropark">
+
+
+<div class="hero-text">
+    <h2>Discover United States National Parks</h2>
+  <p>
+    National Parks Explorer helps you discover beautiful parks across the United States.
+    Browse park information, explore activities, and save your favorites.
+  </p>
+  <a href="parks.html" class="hero-button">Explore All Parks</a>
+</div>
+</section>
+
+<h1>Featured Parks</h1>
+
+<section class="featured-container">
+  <div class="park-card">
+    <img src="images/yellowstone.jpg" alt="Yellowstone National Park">
+    <div class="card-content">
+      <h3>Yellowstone</h3>
+      <p>State: Wyoming</p>
+      <p>Explore the world's first national park, home to Old Faithful and diverse wildlife.</p>
+      <a href="parks.html#yellowstone" class="btn">Learn More</a>
+    </div>
+  </div>
+
+  <div class="park-card">
+    <img src="images/zion.jpg" alt="Zion National Park">
+    <div class="card-content">
+      <h3>Zion</h3>
+      <p>State: Utah</p>
+      <p>Follow the paths of ancient native people and gaze at massive sandstone cliffs.</p>
+      <a href="parks.html#zion" class="btn">Learn More</a>
+    </div>
+  </div>
+
+  <div class="park-card">
+    <img src="images/acadia.jpg" alt="Acadia National Park">
+    <div class="card-content">
+      <h3>Acadia</h3>
+      <p>State: Maine</p>
+      <p>Experience the beauty of the Atlantic coast and granite peaks in Maine.</p>
+      <a href="parks.html#acadia" class="btn">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<section class="tips-section">
+    <h2>Know Before You Go</h2>
+    <p class="tips-subtitle">Essential prep for your National Park adventure.</p>
+    
+    <div class="tips-grid">
+        <div class="tip-card" onclick="toggleTip(this)">
+            <div class="tip-icon">🎒</div>
+            <h3>The 10 Essentials</h3>
+            <p class="tip-text">Always pack navigation, sun protection, first aid, and extra water. Don't rely solely on your phone!</p>
+            <span class="more-info">Click for checklist</span>
+        </div>
+
+        <div class="tip-card" onclick="toggleTip(this)">
+            <div class="tip-icon">🐻</div>
+            <h3>Wildlife Safety</h3>
+            <p class="tip-text">Keep 100 yards from bears/wolves and 25 yards from others. Never feed the animals.</p>
+            <span class="more-info">View distances</span>
+        </div>
+
+        <div class="tip-card" onclick="toggleTip(this)">
+            <div class="tip-icon">📱</div>
+            <h3>Offline Maps</h3>
+            <p class="tip-text">Cell service is rare in parks. Download maps in the NPS app or bring a physical paper map.</p>
+            <span class="more-info">Get the app</span>
+        </div>
+
+        <div class="tip-card" onclick="toggleTip(this)">
+            <div class="tip-icon">🥾</div>
+            <h3>Leave No Trace</h3>
+            <p class="tip-text">Pack out all trash, stay on marked trails, and leave rocks or plants where you found them.</p>
+            <span class="more-info">Learn the 7 principles</span>
+        </div>
+    </div>
+</section>
+
+<section class="search-container">
+    <div class="search-box">
+        <h2>Find Your Next Adventure</h2>
+        <form action="parks.html" method="GET" class="search-form">
+            <input type="text" name="search" placeholder="Search by park name, state, or activity..." aria-label="Search Parks">
+            <button type="submit" class="search-btn">
+                <span class="search-icon">🔍</span> Search
+            </button>
+        </form>
+        <p class="trending">Trending: <a href="parks.html?search=yellowstone">Yellowstone</a>, <a href="parks.html?search=hiking">Hiking</a>, <a href="parks.html?search=utah">Utah</a></p>
+    </div>
+</section>
+
+<section class="testimonials-section">
+    <h2>Explorer Stories</h2>
+    <div class="testimonial-container">
+        <div class="testimonial-card active">
+            <p class="quote">"National Parks Explorer helped me find the perfect quiet trail in Acadia. A must-use for hikers!"</p>
+            <p class="author">— Sarah J.</p>
+        </div>
+
+        <div class="testimonial-card">
+            <p class="quote">"The Zion guide was incredibly accurate. We avoided the crowds and saw the best sunrise of our lives."</p>
+            <p class="author">— Mark T.</p>
+        </div>
+
+        <div class="testimonial-card">
+            <p class="quote">"I love the search feature. Finding kid-friendly trails in Yellowstone took me less than a minute!"</p>
+            <p class="author">— Elena R.</p>
+        </div>
+    </div>
+    
+    <div class="dot-container">
+        <span class="dot active" onclick="currentSlide(0)"></span>
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+    </div>
+</section>
+
+<section class="map-preview">
+    <div class="map-content">
+        <h2>Explore by Region</h2>
+        <p>Click a region to discover parks near you.</p>
+        
+        <div class="region-grid">
+            <div class="region-card" onclick="location.href='parks.html?region=west'">
+                <h3>West</h3>
+                <p>Zion, Yellowstone, Yosemite</p>
+                <span class="park-count">24 Parks</span>
+            </div>
+
+            <div class="region-card" onclick="location.href='parks.html?region=south'">
+                <h3>South</h3>
+                <p>Everglades, Big Bend, Hot Springs</p>
+                <span class="park-count">11 Parks</span>
+            </div>
+
+            <div class="region-card" onclick="location.href='parks.html?region=east'">
+                <h3>East Coast</h3>
+                <p>Acadia, Shenandoah, Biscayne</p>
+                <span class="park-count">14 Parks</span>
+            </div>
+        </div>
+    </div>
+    
+   <div class="map-visual">
+    <div id="map"></div> 
+</div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-left">
+      <p><strong>National Parks Explorer</strong></p>
+      <p>11456 S. Redwood Rd</p>
+      <p>South Jordan, UT 84033</p>
+      <p>admin@parkexplorer.com</p>
+      <p>8018740023</p>
+    </div>
+
+     <div class="footer-center">
+      <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+      <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+      <a href="#"><img src="images/facebook.png" alt="LinkedIn"></a>
+    </div>
+
+    <div class="footer-right">
+      <p><strong>WDD231 Class</strong></p>
+    <p>
+    &copy; <span id="currentYear"></span>  
+    Dalia Rojas • Utah, USA
+    </p>
+  <p id="lastModified"></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

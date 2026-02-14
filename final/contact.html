@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>National Parks Explorer | Discover U.S. Parks</title>
+<meta name="description" content="Contact National Parks Explorer for questions, feedback, or support.">
+<meta name="author" content="Dalia Rojas">
+<link rel="icon" href="images/favicon.ico">
+<link rel="stylesheet" href="styles/styles.css">
+<link rel="stylesheet" href="styles/large.css">
+<script type="module" src="scripts/navigation.js"></script>
+<script defer src="scripts/fmain.js"></script>
+<script defer src="scripts/dates.js"></script>
+</head>
+
+<body>
+<header>
+  <div class="header-content">
+  <span class="site-name">National Parks Explorer</span>
+  <button id="menuButton" aria-label="Toggle Menu">☰</button>
+  </div>
+  
+  <nav id="navMenu">
+      <ul>
+      <a href="index.html" >Home</a>
+      <a href="parks.html">Parks</a>
+      <a href="contact.html" class="active">Contact</a>
+    </ul>
+  </nav>
+</header>
+
+<main class="contact-container">
+  <h1>Contact Us</h1>
+  <div class="contact-grid">
+    <form class="contact-form">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" name="subject">
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5"></textarea>
+
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+
+    <form action="thankyou.html" method="GET" class="contact-form">
+</form>
+
+    <div class="office-info">
+      <h3>Our Office</h3>
+      <p>11456 S. Redwood Rd</p>
+      <p>South Jordan, UT 84033</p>
+      <p>Email: admin@parkexplorer.com</p>
+      <p>Phone: 801-874-0023</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-left">
+      <p><strong>National Parks Explorer</strong></p>
+      <p>11456 S. Redwood Rd</p>
+      <p>South Jordan, UT 84033</p>
+      <p>admin@parkexplorer.com</p>
+      <p>8018740023</p>
+    </div>
+
+     <div class="footer-center">
+      <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+      <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+      <a href="#"><img src="images/facebook.png" alt="LinkedIn"></a>
+    </div>
+
+    <div class="footer-right">
+      <p><strong>WDD231 Class</strong></p>
+    <p>
+    &copy; <span id="currentYear"></span>  
+    Dalia Rojas • Utah, USA
+    </p>
+  <p id="lastModified"></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
